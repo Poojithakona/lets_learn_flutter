@@ -1,0 +1,71 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter widget-preview start --machine --web-server --dtd-url ws://127.0.0.1:49967/XxmI7bE3u-I= --devtools-server-address http://127.0.0.1:9100/
+
+## exception
+
+PathNotFoundException: PathNotFoundException: Cannot open file, path = 'C:\Users\itlab\Desktop\lets_learn\.dart_tool\widget_preview_scaffold\lib\src\generated_preview.dart' (OS Error: The system cannot find the path specified.
+, errno = 3)
+
+```
+#0      _File.throwIfError (dart:io/file_impl.dart:783:7)
+#1      _File.openSync (dart:io/file_impl.dart:576:5)
+#2      _File.writeAsBytesSync (dart:io/file_impl.dart:748:31)
+#3      _File.writeAsStringSync (dart:io/file_impl.dart:776:5)
+#4      ForwardingFile.writeAsStringSync (package:file/src/forwarding/forwarding_file.dart:150:16)
+#5      ErrorHandlingFile.writeAsStringSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:254:22)
+#6      _runSync (package:flutter_tools/src/base/error_handling_io.dart:552:14)
+#7      ErrorHandlingFile.writeAsStringSync (package:flutter_tools/src/base/error_handling_io.dart:253:5)
+#8      PreviewCodeGenerator.populatePreviewsInGeneratedPreviewScaffold (package:flutter_tools/src/widget_preview/preview_code_generator.dart:120:26)
+#9      WidgetPreviewStartCommand.onChangeDetected (package:flutter_tools/src/commands/widget_preview.dart:355:27)
+#10     PreviewDetector._onFileSystemEvent.<anonymous closure> (package:flutter_tools/src/widget_preview/preview_detector.dart:168:23)
+<asynchronous suspension>
+#11     PreviewDetectorMutex.runGuarded (package:flutter_tools/src/widget_preview/utils.dart:99:14)
+<asynchronous suspension>
+#12     PreviewDetector._onFileSystemEvent (package:flutter_tools/src/widget_preview/preview_detector.dart:118:5)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.38.1, on Microsoft Windows [Version 10.0.14393], locale en-US) [155ms]
+    • Flutter version 3.38.1 on channel stable at C:\Users\itlab\Desktop\poojitha26\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision b45fa18946 (27 hours ago), 2025-11-12 22:09:06 -0600
+    • Engine revision b5990e5ccc
+    • Dart version 3.10.0
+    • DevTools version 2.51.1
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, omit-legacy-version-file, enable-lldb-debugging
+
+[✓] Windows Version (10 Pro 64-bit, 1607) [2.4s]
+
+[✗] Android toolchain - develop for Android devices [14ms]
+    ✗ Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/to/windows-android-setup for detailed instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+
+[✓] Chrome - develop for the web [1ms]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✗] Visual Studio - develop Windows apps [0ms]
+    ✗ Visual Studio not installed; this is necessary to develop Windows apps.
+      Download at https://visualstudio.microsoft.com/downloads/.
+      Please install the "Desktop development with C++" workload, including all of its default components
+
+[✓] Connected device (2 available) [23ms]
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.14393]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 142.0.7444.61
+
+[✓] Network resources [856ms]
+    • All expected network resources are available.
+
+! Doctor found issues in 2 categories.
+```
